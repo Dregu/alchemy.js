@@ -1,3 +1,5 @@
+# alchemy.js
+
 Yo the page is at https://dregu.github.io/alchemy.js/
 
 ## wat?
