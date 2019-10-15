@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alchemy.js</title>
+  <style>
+    * { font-family: Segoe UI, sans-serif; }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h2>Alchemy.js</h2>
+    <input type="text" id="seed" placeholder="Enter seed">
+    <div id="recipe"></div>
+  </div>
+  <script src="alchemy.js"></script>
+  <script>
+  document.getElementById('seed').onkeyup = function(e) {
+    if(e.keycode = 13) {
+      e.preventDefault()
+      var alc = get_alchemy(this.value)
+      document.getElementById("recipe").innerHTML = "LC: "+alc[0].join(", ")+"<br/>"+"AP: "+alc[1].join(", ")
+    }
+  }
+  document.getElementById('seed').focus()
+  </script>
+</body>
+</html>
