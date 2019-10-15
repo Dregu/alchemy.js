@@ -3,7 +3,11 @@
 <head>
   <title>Alchemy.js</title>
   <style>
+    body { background: #222; color: #eee; }
     * { font-family: Segoe UI, sans-serif; }
+    #recipe {
+      margin: 1em auto;
+    }
   </style>
 </head>
 <body>
@@ -12,16 +16,7 @@
     <input type="text" id="seed" placeholder="Enter seed">
     <div id="recipe"></div>
   </div>
-  <script src="alchemy.js"></script>
-  <script>
-  document.getElementById('seed').onkeyup = function(e) {
-    if(e.keycode = 13) {
-      e.preventDefault()
-      var alc = get_alchemy(this.value)
-      document.getElementById("recipe").innerHTML = "LC: "+alc[0].join(", ")+"<br/>"+"AP: "+alc[1].join(", ")
-    }
-  }
-  document.getElementById('seed').focus()
-  </script>
+  <a href="https://github.com/Dregu/alchemy.js"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png" alt="Fork me on GitHub"></a>
+  <script src="bundle.js"></script>
 </body>
 </html>
