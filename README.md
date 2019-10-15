@@ -12,5 +12,6 @@ This is a js port of https://github.com/probable-basilisk/cheatgui alchemy recip
 const Alchemy = require('./alchemy.js');
 const alchemy = new Alchemy();
 var seed = 42069;
-var recipes = alchemy.get_alchemy(seed);
+var translate = true;
+var recipes = alchemy.get_alchemy(seed, translate);
 ```

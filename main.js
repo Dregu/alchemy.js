@@ -7,8 +7,8 @@ document.getElementById('seed').onkeyup = function(e) {
       return
     }
     e.preventDefault()
-    var alc = alchemy.get_alchemy(this.value)
-    document.getElementById("recipe").innerHTML = "LC: "+alc[0].join(", ")+"<br/>"+"AP: "+alc[1].join(", ")
+    var alc = alchemy.get_alchemy(this.value, 1)
+    document.getElementById("recipe").innerHTML = "LC: "+alc["LC"].join(", ")+"<br/>"+"AP: "+alc["AP"].join(", ")
   }
 }
 document.getElementById('seed').focus()

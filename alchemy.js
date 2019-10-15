@@ -69,7 +69,7 @@ module.exports = class Alchemy {
     return [combo[1], combo[2], combo[3]]
   }
 
-  get_alchemy(world_seed) {
+  get_alchemy(world_seed, translate = false) {
     let seed = parseInt(world_seed)
     this.rand_state = Math.floor(seed * 0.17127000 + 1323.59030000)
 
@@ -81,6 +81,30 @@ module.exports = class Alchemy {
     this.rand_state = this.hax_prng_next(this.rand_state)
     this.rand_state = this.hax_prng_next(this.rand_state)
     let ap_combo = this.random_recipe(seed)
-    return [lc_combo, ap_combo]
+    if(translate) {
+      ap_combo = ap_combo.map(this.translate)
+      lc_combo = lc_combo.map(this.translate)
+    }
+    return {"LC": lc_combo, "AP": ap_combo}
+  }
+
+  translate(name) {
+    name = name.replace("magic_liquid_", "")
+    name = name.replace("teleportation", "teleportatium")
+    name = name.replace("berserk", "berserkium")
+    name = name.replace("charm", "pheromone")
+    name = name.replace("invisibility", "invisiblium")
+    name = name.replace("radioactive_liquid", "toxic sludge")
+    name = name.replace("random_", "chaotic ")
+    name = name.replace("polymorph", "polymorphine")
+    name = name.replace("water_ice", "chilly water")
+    name = name.replace("water_swamp", "swamp")
+    name = name.replace("blood_fungi", "fungus")
+    name = name.replace("blood_worm", "worm blood")
+    name = name.replace("alcohol", "whiskey")
+    name = name.replace("gunpowder_explosive", "explosive gunpowder")
+    name = name.replace("_", " ")
+    name = name.substr(0, 1).toUpperCase()+name.substr(1)
+    return name
   }
 }
