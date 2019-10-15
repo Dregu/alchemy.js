@@ -100,10 +100,11 @@ module.exports = class Alchemy {
     name = name.replace("polymorph", "polymorphine")
     name = name.replace("water_ice", "chilly water")
     name = name.replace("water_swamp", "swamp")
-    name = name.replace("blood_fungi", "fungus")
+    name = name.replace("blood_fungi", "blood fungus")
     name = name.replace("blood_worm", "worm blood")
     name = name.replace("alcohol", "whiskey")
     name = name.replace("gunpowder_explosive", "explosive gunpowder")
+    name = name.replace("fungi", "fungus")
     name = name.replace("_", " ")
     name = name.substr(0, 1).toUpperCase()+name.substr(1)
     return name
